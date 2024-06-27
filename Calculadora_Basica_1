@@ -1,0 +1,51 @@
+#criado por Pedro Henrique Neiva Oliveira
+
+print(" ")
+print ("----- Calculadora -----")
+
+sair = False
+while sair == False:
+
+    num1 = input(f"Digite o primeiro numero: ")
+    num1 = int(num1)
+    if isinstance(num1, int):
+        print("")
+    
+    else:
+        print("ERRO")
+        break
+
+    operador = input("Digite o operador: ")
+    print("")
+
+    num2 = input(f"Digite o segundo numero: ")
+    num2 = int(num2)
+    if isinstance(num2, int):
+        print("")
+    
+    else:
+        print("ERRO")
+        break
+
+    if operador == "+":
+        operacao = num1 + num2
+
+    elif operador == "-":
+        operacao = num1 - num2
+
+    elif operador ==  "*":
+        operacao = num1 * num2
+
+    elif operador == "/":
+        resultado = num1 / num2
+        operacao = int (resultado)
+
+
+    print (f"resultado: {operacao}")
+
+    teste = input ("deseja sair (nao/sim): ")
+    if teste == "sim" or teste != "nao":
+        sair = True
+    
+print(" ")
+print ("----- Calculadora -----")
