@@ -6,24 +6,26 @@ print ("----- Calculadora -----")
 sair = False
 while sair == False:
 
-    num1 = input(f"Digite o primeiro numero: ")
-    num1 = int(num1)
-    if isinstance(num1, int):
-        print("")
-    
-    else:
+    try:
+        num1 = input(f"Digite o primeiro numero: ")
+        num1 = float(num1)
+    except:
         print("ERRO")
         break
-
-    operador = input("Digite o operador: ")
-    print("")
-
-    num2 = input(f"Digite o segundo numero: ")
-    num2 = int(num2)
-    if isinstance(num2, int):
-        print("")
     
+    print("")
+    
+    operador = input("Digite o operador(*, /, +, -): ")
+    if operador == ("*", "/", "+", "-"):
+        print("")
     else:
+        print("ERROR")
+        break
+
+    try:
+        num2 = input(f"Digite o primeiro numero: ")
+        num2 = float(num2)
+    except:
         print("ERRO")
         break
 
@@ -38,13 +40,15 @@ while sair == False:
 
     elif operador == "/":
         resultado = num1 / num2
-        operacao = int (resultado)
 
+    else:
+        print("ERROR")
+        break
 
-    print (f"resultado: {operacao}")
+    print (f"resultado: {operacao:.1f}")
 
-    teste = input ("deseja sair (nao/sim): ")
-    if teste == "sim" or teste != "nao":
+    sair_calculadora = input ("deseja sair (nao/sim): ")
+    if sair_calculadora == "sim" or sair_calculadora != "nao":
         sair = True
     
 print(" ")
