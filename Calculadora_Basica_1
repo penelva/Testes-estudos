@@ -1,11 +1,13 @@
 #criado por Pedro Henrique Neiva Oliveira
 
-print(" ")
-print ("----- Calculadora -----")
+calculadora = ("Calculadora")
+
+print (f"{calculadora:-^40}")
 
 sair = False
 while sair == False:
 
+    print("")
     try:
         num1 = input(f"Digite o primeiro numero: ")
         num1 = float(num1)
@@ -14,42 +16,42 @@ while sair == False:
         break
     
     print("")
-    
     operador = input("Digite o operador(*, /, +, -): ")
-    if operador == ("*", "/", "+", "-"):
-        print("")
-    else:
-        print("ERROR")
-        break
+    print("")
 
     try:
-        num2 = input(f"Digite o primeiro numero: ")
+        num2 = input(f"Digite o segundo numero: ")
         num2 = float(num2)
     except:
         print("ERRO")
         break
 
     if operador == "+":
-        operacao = num1 + num2
+        operacao = (num1 + num2)
+
 
     elif operador == "-":
-        operacao = num1 - num2
+        operacao = (num1 - num2)
 
     elif operador ==  "*":
-        operacao = num1 * num2
+        operacao = (num1 * num2)
 
     elif operador == "/":
-        resultado = num1 / num2
+        operacao = (num1 / num2)
 
     else:
         print("ERROR")
         break
-
+    
+    print("")
     print (f"resultado: {operacao:.1f}")
+    print("")
 
     sair_calculadora = input ("deseja sair (nao/sim): ")
     if sair_calculadora == "sim" or sair_calculadora != "nao":
         sair = True
     
-print(" ")
-print ("----- Calculadora -----")
+    print("")
+    print(f"{calculadora:-^40}")
+
+print("")
