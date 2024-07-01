@@ -2,29 +2,39 @@
 
 calculadora = ("Calculadora")
 
-print (f"{calculadora:-^40}")
-
 sair = False
 while sair == False:
-
+    print (f"{calculadora:-^40}")
     print("")
     try:
         num1 = input(f"Digite o primeiro numero: ")
         num1 = float(num1)
     except:
-        print("ERRO")
-        break
+        print(f"{"ERROR":-^40}")
+        print(f"{"Digite um numero valido":-^40}")
+        continue
     
     print("")
-    operador = input("Digite o operador(*, /, +, -): ")
+    
+    operadores_permitidos = "+-*/"
+    operador = input ("Digite um operador matematico(+, -, *, /): ")
+    if operador not in operadores_permitidos:
+        print(f"{"ERROR":-^40}")
+        print(f"{"Operador invalido":-^40}")
+        continue
+    if len (operador) >1:
+        print(f"{"ERROR":-^40}")
+        print(f"{"Insira apenas 1 operador":-^40}")
+
     print("")
 
     try:
         num2 = input(f"Digite o segundo numero: ")
         num2 = float(num2)
     except:
-        print("ERRO")
-        break
+        print(f"{"Digite um numero valido":-^40}")
+        print(f"{"ERROR":-^40}")
+        continue
 
     if operador == "+":
         operacao = (num1 + num2)
@@ -40,18 +50,19 @@ while sair == False:
         operacao = (num1 / num2)
 
     else:
-        print("ERROR")
-        break
+        print(f"{"ERROR":-^40}")
+        continue
     
     print("")
     print (f"resultado: {operacao:.1f}")
     print("")
 
     sair_calculadora = input ("deseja sair (nao/sim): ")
+    sair_calculadora = sair_calculadora. lower()
     if sair_calculadora == "sim" or sair_calculadora != "nao":
         sair = True
     
     print("")
-    print(f"{calculadora:-^40}")
-
+    
+print(f"{calculadora:-^40}")
 print("")
