@@ -1,0 +1,52 @@
+import os
+lista_compras = ["Arroz", "Feijao", "Leite"]
+
+adicionar = input("Deseja adicionar algo na lista?(sim/nao) ").lower()
+if adicionar == "sim" and adicionar != "nao":
+    adicionando = True
+
+    while adicionando == True:
+        lista_compras.append(input("Qual item deseja adicionar? "))
+
+        adicionar_lista = input("Deseja adicionar algo a mais?(sim/nao) ").lower()
+        if adicionar_lista == "nao" and adicionar_lista != "sim":
+            adicionando = False
+        else:
+            continue
+    os.system("cls")
+    print (lista_compras)
+
+deletar = input("Deseja deletar algum item?(sim/nao) ").lower()
+if deletar == "sim" and deletar != "nao":
+    deletando = True
+    
+    while deletando == True:
+    
+        for item in enumerate(lista_compras):
+                print (item)
+        try:
+            deletar_lista = input("Qual o indice do item deseja deletar? ")
+            item_deltado = int (deletar_lista)
+            del lista_compras[item_deltado]
+            
+        except ValueError:
+            print('Por favor digite número int.')
+        
+        except IndexError:
+            print('Índice não existe na lista')
+        
+        except Exception:
+            print('Erro desconhecido')
+        
+        final_deletar = input("Deseja deletar algo a mais?(sim/nao) ").lower()
+        if final_deletar == "nao" and final_deletar != "sim":
+            deletando = False
+        else:
+            continue
+    os.system("cls")
+
+lista_atual = input("Deseja ver como ficou a sua lista?(sim/nao) ").lower()
+if lista_atual == "sim" and lista_atual != "nao":
+    print(lista_compras)
+else:
+    print("Tchau")
